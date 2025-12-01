@@ -1,36 +1,36 @@
-# Confluence Draft — Vault RBAC Story
+# Vault RBAC Implementation — Summary
 
 ## Purpose
-Create least-privilege Vault policies for all human and machine roles.
-Story 0.2.1 (Path Structure) is pending — placeholder paths used.
+Provide least-privilege policies for humans and services, ensure machine/service separation, and validate access.
 
-## Placeholder Path Format
-secret/data/<env>/<team>/<service>/*
+## Human roles
+- DevOps: ...
+- SRE: ...
+- Backend: ...
+- Auditor: ...
 
-## Human Roles
-- DevOps
-- SRE
-- Backend Engineer
-- Auditor
+## Machine roles
+- core_api: ...
+- ai_gateway: ...
+- notification_service: ...
+- db_migrator: ...
 
-## Machine Roles
-- core_api
-- ai_gateway
-- notification_service
+## Policy files
+Location: `vault-rbac/policies/`
 
-## Policy Templates
-Included from Git repo.
+## How to apply
+1. Export VAULT_ADDR and login as admin.
+2. Run `./apply_policies.sh`.
 
-## Test Procedure
-1. vault policy write ...
-2. vault token create ...
-3. vault kv get allowed and disallowed paths
-4. Tests must show:
-   - Allowed paths = success
-   - Unauthorized paths = permission denied
+## Test tokens & validation
+1. Run `./create_test_tokens.sh` to create tokens.
+2. Run the validation scripts or curl calls in the Validation section.
 
-## Next Steps After Story 0.2.1
-- Replace placeholders in policies
-- Update RBAC matrix
-- Re-run tests
-- Publish final version
+## Acceptance checklist
+- Tokens cannot access unauthorized paths.
+- All policy violations produce 403 and are fixed.
+- Documentation and RBAC matrix updated.
+
+## Change log
+- <date>: created policies by <author>
+
