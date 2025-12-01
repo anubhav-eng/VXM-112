@@ -1,8 +1,0 @@
-role,principal_type,placeholder_paths,capabilities,notes
-DevOps,human,secret/data/<env>/*,create,read,update,delete,list,Full access non-prod
-SRE,human,secret/data/<env>/ops/*,read,list,update,Incident operational access
-Backend,human,secret/data/<env>/backend/*,read,list,update,Their service only
-Auditor,human,secret/metadata/*,read,list,Audit only no writes
-core_api,app,secret/data/<env>/core_api/*,read,list,Service secrets
-ai_gateway,app,secret/data/<env>/ai_gateway/*,read,list,Service secrets
-notification_service,app,secret/data/<env>/notification/*,read,list,update,Rotate tokens
