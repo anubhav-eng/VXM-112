@@ -9,4 +9,3 @@ path "secret/data/prod/services/core_api/ephemeral/*" {
 path "auth/token/roles/core_api_role" {
   capabilities = ["read"]
 }
-
